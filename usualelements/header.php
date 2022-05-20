@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="css/custom.css">
     
     <!-- Title -->
-    <title>StudyPal</title>
+    <title>%TITLE%</title>
     <link rel="shortcut icon" type="image/png" href="media/logo48x48.png"/>
   </head>
   <body>

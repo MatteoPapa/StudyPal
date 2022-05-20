@@ -2,7 +2,8 @@
 <html>
     <head>
         <title>Login Page</title>
-        
+        <link rel="shortcut icon" type="image/png" href="../media/logo48x48.png"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     
         <!--Bootsrap 4 CDN-->
@@ -15,6 +16,8 @@
 
         <link rel="stylesheet" type="text/css" href="../css/signform.css">
         <link rel="stylesheet" type="text/css" href="../css/login.css">
+
+        
     </head>
     <body>
         

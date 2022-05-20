@@ -18,7 +18,14 @@
 
 
 <?php
-    include_once("../usualelements/header.php");
+     ob_start();
+     include("../usualelements/header.php");
+     $buffer=ob_get_contents();
+     ob_end_clean();
+ 
+     $buffer=str_replace("%TITLE%","StudyPal - Compagni",$buffer);
+     echo $buffer;
+
     include_once("../profileutility/profile-data.php");
 ?>
     
