@@ -22,9 +22,9 @@ else{
     $facolta="";
 }
 
-$biografia=$_POST["biografia"];
-$nome=$_POST["nome"];
-$cognome=$_POST["cognome"];
+$biografia=ucfirst($_POST["biografia"]);
+$nome=ucfirst($_POST["nome"]);
+$cognome=ucfirst($_POST["cognome"]);
 
 //CONNESSIONE AL DATABASE
 

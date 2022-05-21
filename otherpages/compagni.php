@@ -59,12 +59,10 @@
                 <div class="col-lg-12 card-margin">
                     <div class="card search-form">
                         <div class="card-body p-0">
-
                             <form id="search-form">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <div class="row no-gutters">
-                                            <div class="col-lg-4 col-md-3 col-sm-12 mx-0 px-0 indirizzofacoltasearch">
+                                    <div class="row col-12">
+                                            <div class="col-lg-3 indirizzofacoltasearch">
                                                 <select class="indfacselect form-control" id="exampleFormControlSelect1">
                                                     <option>Tutti</option>
                                                     <option value="Liceale">Liceale</option>
@@ -72,7 +70,7 @@
                                                     
                                                 </select>
                                             </div>
-                                            <div id="indirizzodiv2" class="col-lg-8 col-md-8 col-sm-12 indirizzofacoltasearch">
+                                            <div id="indirizzodiv2" class="col-lg-6 indirizzofacoltasearch">
                                                 <select class="indfacselect form-control" id="exampleFormControlSelectLiceo">
                                                     <option value="">Tutti gli indirizzi</option>
                                                     <option value="Liceo Artistico" <?php if ($facolta=="Liceo Artistico") echo "selected"?>>Liceo Artistico</option>
@@ -88,7 +86,7 @@
                                                     <option value="Istituto Professionale" <?php if ($facolta=="Istituto Professionale") echo "selected"?>>Istituto Professionale</option>
                                                 </select>
                                             </div>
-                                            <div id="facoltadiv2" class="col-lg-8 col-md-8 col-sm-12 indirizzofacoltasearch">
+                                            <div id="facoltadiv2" class="col-lg-6 indirizzofacoltasearch">
                                                 <select class="indfacselect form-control" id="exampleFormControlSelectUni">
                                                     <option value="">Tutte le facoltà</option>    
                                                     <option value="Altro" <?php if ($facolta=="Altro") echo "selected"?>>Altro</option>
@@ -132,18 +130,17 @@
                                                     <option value="Studi Orientali" <?php if ($facolta=="Studi Orientali") echo "selected"?>>Studi Orientali</option>
                                                 </select>
                                             </div>
-                                            <div id="emptydiv" class="col-lg-8 col-md-8 col-sm-12">
+                                            <div id="emptydiv" class="col-lg-6 ">
                                             </div>
-                                        
-                                        </div>
                                     </div>
                                 </div>
-                            </form>
-                            
+                            </form>   
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!--SEARCH BODY-->
             <div class="row">
                 <div class="col-12">
                     <div class="mainbody card card-margin py-4 px-2">
@@ -180,7 +177,7 @@
                                                             $searchNome=$row2["nome"];
                                                             $searchCognome=$row2["cognome"];
                                                         if ($searchGenere!="" && $_SESSION["username"]!=$searchUsername){
-                                                            include("../compagniutility/functions.php");
+                                                            include("../compagniutility/accountline.php");
                                                         }
                                                     }
                                                 ?>
@@ -197,9 +194,27 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
-    </main>
+    <div class="popupbio-container">
+        <div class="popupbio">
+            <div class="border bordertop">
+                <b>Biografia</b>
+                <div class="popup-closer" onclick="biografiaDisappears()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                </div>
+            </div>
+                
+            <div class="main">
+                <p id="biografiainpopup">Nessuna biografia</p>
+            </div>
+            
+        </div>
+    </div>
+</main>
 
     <?php
         include_once("../usualelements/footer.php");

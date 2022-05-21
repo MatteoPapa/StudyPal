@@ -1,6 +1,14 @@
 <?php
     session_start();
-    include_once("usualelements/header.php");
+
+
+    ob_start(); //L'INCLUDE NON VIENE MANDATO IN OUTPUT MA SALVATO DENTRO UN BUFFER
+    include("usualelements/header.php");
+    $buffer=ob_get_contents(); //BUFFER SALVATO IN VARIABILE STRINGA
+    ob_end_clean();
+ 
+    $buffer=str_replace("%TITLE%","StudyPal - Homepage",$buffer); //REPLACE TITLE
+    echo $buffer;
     
 ?>
 

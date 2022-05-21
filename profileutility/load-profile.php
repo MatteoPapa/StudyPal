@@ -9,11 +9,10 @@
     require_once("../profileutility/profile-data.php");
 ?>
 
-    <div class="container rounded bg-white mt-2 mb-5">
+    <div class="container rounded bg-white mt-1 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-
                     <img class="rounded-circle mt-2 mb-2" id="avatarimage" width="150px" height="150px"/>
                     <span class="font-weight-bold"><b><?php echo $username?></b></span>
                     <span style="font-weight: 300px"><?php echo $email?></span>
@@ -33,7 +32,7 @@
 
                     <form action="profileutility/edit-profile.inc.php" name="editForm" method="POST" id="edit-form">
 
-                        <div class="row mt-1">
+                        <div class="row">
                             <div class="col-md-12 py-2"><b>Genere</b><br>
                                 <div class="py-2">
                                     <input  type="radio" name="genere" id="maschio" value="maschio" <?php if ($genere=="maschio") echo "checked"?>
@@ -133,15 +132,15 @@
                             </div>
                             <div class="col-md-12 py-2">
                                 <b>Biografia</b><br>
-                                <textarea class="bioedit form-control" name="biografia" rows="5" cols="60" form="edit-form"><?php echo $biografia?></textarea>
+                                <textarea class="bioedit form-control" name="biografia" rows="3" cols="60" form="edit-form"><?php echo $biografia?></textarea>
                             </div>
                         </div>
                         <div class="d-flex column justify-content-start">
-                            <div class="mt-5 text-center px-2">
+                            <div class="mt-3 text-center px-2">
                                 <button class="btn btn-primary profile-button" name="submitbutton" type="submit">Salva Profilo</button>
                             </div>
 
-                            <div class="mt-5 text-center px-2">
+                            <div class="mt-3 text-center px-2">
                                 <button class="btn btn-danger profile-button" type="button" onclick="location.href ='otherpages/profile.php'">Annulla</button>
                             </div>
 

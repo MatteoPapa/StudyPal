@@ -50,7 +50,8 @@ function licealeUniversitario(){
     }
 }
 
-document.getElementById('exampleFormControlSelect1').addEventListener('input', function (event) {
+var ex=document.getElementById('exampleFormControlSelect1');
+if (ex!=null) ex.addEventListener('input', function (event) {
 
     if (event.target.value=="Liceale"){
         document.getElementById("facoltadiv2").style.display="none";
@@ -85,8 +86,8 @@ document.getElementById('exampleFormControlSelect1').addEventListener('input', f
 
 //LICEO SELECTOR JAVASCRIPT
 
-document.getElementById('exampleFormControlSelectLiceo').addEventListener('input', function (event) {
-
+var ex=document.getElementById('exampleFormControlSelect1');
+if (ex!=null) document.getElementById('exampleFormControlSelectLiceo').addEventListener('input', function (event) {
     let filter=event.target.value;
     filter = filter.replace(/\s+/g, '');
 
@@ -133,7 +134,8 @@ function updateLiceo(){
 
 //UNIVERSITA'
 
-document.getElementById('exampleFormControlSelectUni').addEventListener('input', function (event) {
+var ex=document.getElementById('exampleFormControlSelect1');
+if (ex!=null) document.getElementById('exampleFormControlSelectUni').addEventListener('input', function (event) {
 
     let filter=event.target.value;
     filter = filter.replace(/\s+/g, '');
@@ -195,7 +197,23 @@ function maschioFemmina(){
 //BIO APPEARS
 function biografiaAppears(biografia){
     console.log(biografia);
+    document.getElementById("biografiainpopup").innerHTML = biografia;
+    $('.popupbio-container').css('display','flex');
+    $('.popupbio-container').css('opacity','1');
+    $('body').addClass('stop-scrolling');
+    $('body').bind('touchmove', function(e){e.preventDefault()});
+
 }
+
+function biografiaDisappears(){
+    $('.popupbio-container').css('display','none');
+    $('.popupbio-container').css('opacity','0');
+    $('body').removeClass('stop-scrolling');
+    $('body').unbind('touchmove');
+}
+
+
+
 
 //PROFILE AJAX (&JQuery)
 

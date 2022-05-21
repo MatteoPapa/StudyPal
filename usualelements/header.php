@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <!-- BASE FOLDER --> 
-    <base href="http://localhost/proveSito/">
+    <base href="http://localhost/studypal/">
 
 
     <!-- Required meta tags -->
@@ -61,7 +61,7 @@
                                     <button type="button" class="btn btn-warning me-2 ">Profilo</button>
                                 </a>
                                 <a href="login-signup/logout.inc.php">
-                                    <button type="button" id="logbut" class="btn logbutton btn-dark ">Log Out</button>
+                                    <button type="button" id="logbut" class="btn logbutton btn-dark">Log Out</button>
                                 </a>
                             </span>';
                         }
