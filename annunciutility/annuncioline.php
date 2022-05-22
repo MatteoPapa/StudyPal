@@ -6,9 +6,9 @@
 <li>
     <!-- begin timeline-time -->
     <div class="timeline-time">
-        <span class="date px-2">04:20</span>
+        <span class="date">04:20</span>
        
-        <span class="time px-2"><?=$searchData?></span>
+        <span class="time"><?=$searchData?></span>
     </div>
     <!-- end timeline-time -->
     <!-- begin timeline-icon -->
@@ -27,12 +27,18 @@
                 echo "src='media/avatar-female.jpg'";
             }
             ?> alt=""></span>
-            <span class="username">
-            <a class="" href="compagniutility/compagni.user.php?user=<?php echo $searchUsername?>"><?php echo $searchUsername?></a> <small></small></span>
+            
+            <a class="userfromannunci" href="compagniutility/compagni.user.php?user=<?php echo $searchUsername?>">
+            <span class="username"><?php echo $searchUsername?></span></a> 
             
         </div>
         <div class="timeline-content">
-            <b style="text-decoration:underline"><?php echo $searchLuogo?></b>
+            <b >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            <span style="text-decoration:underline" class=""><?php echo $searchLuogo?></span></b>
             <p class="my-1">
             <?php echo $searchDescrizione?>
             </p>
@@ -52,7 +58,7 @@
                     </svg>
                 <span class="stats-total">
                     
-                4.3k Ci sarò !
+                4.3k persone ci saranno !
                 </span>
             </div>
         </div>

@@ -58,7 +58,7 @@
             <div class="col-md-5 border-right">
                 <div class="p-3 py-0">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right"><b>Scrivi Annuncio</b></h4>
+                        <h4 class="text-right"><b>Andrò a studiare...</b></h4>
                     </div>
 
                     
@@ -70,19 +70,19 @@
 
                         <div class="row mt-1">
                             
-                            <div class="col-md-12 py-2"><b>Luogo</b><br>
+                            <div class="col-md-12 py-2"><b>Dove ?</b><br>
                                 <div class="py-2">
                                     <input type="text" class="form-control" name="luogo" required autofocus>
                                 </div>
                             </div>
-                            <div class="col-md-12 py-2"><b>Data</b><br>
+                            <div class="col-md-12 py-2"><b>Quando ?</b><br>
                                 <div class="py-2">
-                                    <input type="date" class="form-control" name="data" required>
+                                    <input type="date" onkeydown="return false" class="form-control" name="data" min="<?php echo date("Y-m-d")?>" required>
                                 </div>
                             </div>
 
                             <div class="col-md-12 py-2">
-                                <b>Descrizione</b><br>
+                                <b>Cosa studierai ?</b><br>
                                 <textarea class="bioedit form-control" name="descrizione" rows="3" cols="60" form="publishForm" required></textarea>
                             </div>
                         </div>
