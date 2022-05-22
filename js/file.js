@@ -242,3 +242,9 @@ function compilaMessage(){
         document.getElementById('compilaPrima').style.display="block";
     }
 }
+
+/*DATEPICKER*/
+
+$('.datepicker').datepicker({
+    inline: true
+  });

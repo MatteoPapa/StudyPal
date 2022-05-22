@@ -202,4 +202,27 @@ function modifyDatabase($conn,$username,$genere,$studente,$facolta,$biografia,$n
     mysqli_stmt_close($stmt);
 
 }
+    
+function publishAnnuncio($conn,$username,$genere,$luogo,$descrizione,$data){
+
+    $sql = "INSERT INTO annunci (username,genere,luogo,descrizione,data) VALUE (?,?,?,?,?)";
+
+    
+    $stmt = mysqli_stmt_init($conn); 
+
+
+    if (!mysqli_stmt_prepare($stmt,$sql)){ //PREPARIAMO LO STATEMENT E CONTROLLIAMO ERRORI
+        header("location: profile.php?error=stmtfailed");
+        exit();
+    }
+     
+    //BIND PARAMETRI
+    
+    mysqli_stmt_bind_param($stmt,"sssss",$username,$genere,$luogo,$descrizione,$data);
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+}
+
 
