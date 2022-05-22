@@ -243,8 +243,31 @@ function compilaMessage(){
     }
 }
 
-/*DATEPICKER*/
 
-$('.datepicker').datepicker({
-    inline: true
-  });
+
+/*LIKE ANNUNCI (UTILIZZA AJAX PER CHIAMATA ASINCRONA A PHP)*/
+
+function ballonlike(idannuncio,liker){
+    
+
+    idannuncio=parseInt(idannuncio);
+    jQuery.ajax({
+        type:"POST",
+        url: 'annunciutility/putlike.php',
+        dataType:'json',
+        data: {likerpost:liker,idannunciopost:idannuncio},
+        success: function(data){
+            
+        }
+    });
+
+    setTimeout(function(){
+        updateDiv();
+    },100);
+    
+}
+
+function updateDiv()
+{ 
+    $( "#profile-post").load(window.location.href + " #profile-post" );
+}

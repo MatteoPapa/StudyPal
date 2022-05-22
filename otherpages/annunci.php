@@ -85,22 +85,26 @@
                         <div class="tab-pane fade active show" id="profile-post">
                             <!-- begin timeline -->
                             <ul class="timeline">
+
+                                
                             <?php
                                 $sql="SELECT * FROM annunci order by data";
                                 $result=mysqli_query($conn,$sql);
-
+                                
                                 while($row2=mysqli_fetch_assoc($result)){
                                         
                                         $searchUsername=$row2["username"];
                                         $searchGenere= $row2["genere"];
                                         $searchLuogo= $row2["luogo"];
                                         $searchDescrizione= $row2["descrizione"];
+                                        $searchId=$row2["id"];
                                         $searchData=$row2["data"];
                                         $currentDate=date('Y-m-d');
                                         if ($searchData<$currentDate){
                                             echo "";
                                             continue;
                                         }
+                                        
                                         if ($searchLuogo!=""){
                                             include("../annunciutility/annuncioline.php");
                                         }

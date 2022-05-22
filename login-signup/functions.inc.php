@@ -225,4 +225,42 @@ function publishAnnuncio($conn,$username,$genere,$luogo,$descrizione,$data){
 
 }
 
+function checkLike($conn,$idannuncio,$liker){
+     //IS IT LIKED FROM YOU ?
+     $sql= "SELECT count(*) as num_rows FROM likes WHERE (liker='$liker' and idannuncio='$idannuncio')";
+     $liked=mysqli_query($conn,$sql);
+     $row=mysqli_fetch_array($liked);
+     
+     if ($row["num_rows"] > 0) return true;
+     else return false;
+}
 
+function putLike($conn,$idannuncio,$liker){
+    $sql = "INSERT INTO likes (idannuncio,liker) VALUE (?,?)";
+
+    
+    $stmt = mysqli_stmt_init($conn); 
+
+
+    if (!mysqli_stmt_prepare($stmt,$sql)){ //PREPARIAMO LO STATEMENT E CONTROLLIAMO ERRORI
+        header("location: profile.php?error=stmtfailed");
+        exit();
+    }
+        
+    //BIND PARAMETRI
+    
+    mysqli_stmt_bind_param($stmt,"is",$idannuncio,$liker);
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    exit();
+}
+
+function deleteLike($conn,$idannuncio,$liker){
+    $sql = "DELETE FROM likes where (idannuncio='$idannuncio' and liker='$liker')";
+    
+    if ($conn->query($sql)!= TRUE){
+        exit();
+    }
+}

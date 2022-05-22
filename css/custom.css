@@ -121,6 +121,12 @@ header {
 
 button{
   box-shadow: 1px 1px 5px black !important;
+  transform: scale(1);
+  transition: scale 1s ease-in !important;
+}
+
+button:hover{
+  transform: scale(1.05);
 }
 
 .btn-danger{
