@@ -37,13 +37,13 @@
     ?>
 
     
-    <main id="main" class="py-4">
+    <main id="main">
         
         <div id="profilecontainer">
-            <div class="container rounded bg-white mb-5 ">
+            <div class="container rounded bg-white mt-0 mb-5 ">
                 <div id="avatardiv" class="row d-flex justify-content-center">
                     <div class="col-md-3 border-right">
-                        <div class="d-flex flex-column align-items-center text-center p-3 pt-5">'
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5">'
 
                         <img class="rounded-circle mt-2 mb-2 " id="avatarimage" width="150px" height="150px" 
                             <?php
@@ -167,7 +167,7 @@
                                 </div>
                             </div>
                             <div class="d-flex column justify-content-start mx-0 px-0">
-                                <div class="mt-5">
+                                <div class="mt-4">
                                     <a target="_blank" href="mailto:"<?=$email?>>
                                         <button id="editbutton" class="btn btn-primary profile-button" type="button">Contatta <?=$_GET["user"]?></button>
                                     </a>

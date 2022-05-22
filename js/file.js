@@ -194,7 +194,7 @@ function maschioFemmina(){
     }
 }
 
-//BIO APPEARS
+//BIOGRAFIA APPEARS
 function biografiaAppears(biografia){
     console.log(biografia);
     document.getElementById("biografiainpopup").innerHTML = biografia;

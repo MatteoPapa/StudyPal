@@ -38,7 +38,7 @@
           <div class="spacer"></div>
 
           <section class="py-1 text-center container">
-              <div class="row py-lg-5 pt-5">
+              <div class="row py-lg-3 pt-3">
                   <div class="col-lg-6 col-md-8 mx-auto">
                       <div class="whiteback px-lg-7">
                           <div class="jumbotext my-3">
@@ -52,11 +52,11 @@
 
       </div>
     </div>
-    <div class="searchbody">
+    <div class="searchbody" >
         <div class="container">
             <!--SEARCH BAR-->
             <div class="row">
-                <div class="col-lg-12 card-margin">
+                <div class="col-lg-12 ">
                     <div class="card search-form">
                         <div class="card-body p-0">
                             <form id="search-form">
@@ -153,8 +153,8 @@
                                         <div class="result-header">
                                             <div class="row">
                                                 <div class="col-lg-12 text-center">
-                                                    <div class="records" style="text-decoration:underline"><b>Risultati:</b></div>
-                                                    <p class="mt-1">Seleziona un utente per vedere il suo profilo</p>
+                                                    <div class="records" style="text-decoration:underline;font-size:1.3em;color:black"><b>Risultati:</b></div>
+                                                    <p class="mt-3">Seleziona un utente per vedere il suo profilo</p>
                                                 </div>
                                                 
                                             </div>
@@ -202,7 +202,7 @@
             <div class="border bordertop">
                 <b>Biografia</b>
                 <div class="popup-closer" onclick="biografiaDisappears()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg>
                 </div>
