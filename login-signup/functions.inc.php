@@ -162,7 +162,7 @@ function loginUser($conn,$email,$pwd){
         $_SESSION["username"]=$userExists["username"];
         $_SESSION["email"]=$userExists["email"];
 
-        require_once("../profileutility/profile-data.php");
+        require_once("../utility/profileutility/profile-data.php");
         
         if ($genere=="maschio" || $genere=="femmina"){
             header("location: ../index.php");
@@ -203,9 +203,9 @@ function modifyDatabase($conn,$username,$genere,$studente,$facolta,$biografia,$n
 
 }
     
-function publishAnnuncio($conn,$username,$genere,$luogo,$descrizione,$data){
+function publishAnnuncio($conn,$username,$genere,$luogo,$descrizione,$data,$time){
 
-    $sql = "INSERT INTO annunci (username,genere,luogo,descrizione,data) VALUE (?,?,?,?,?)";
+    $sql = "INSERT INTO annunci (username,genere,luogo,descrizione,data,orario) VALUE (?,?,?,?,?,?)";
 
     
     $stmt = mysqli_stmt_init($conn); 
@@ -218,12 +218,24 @@ function publishAnnuncio($conn,$username,$genere,$luogo,$descrizione,$data){
      
     //BIND PARAMETRI
     
-    mysqli_stmt_bind_param($stmt,"sssss",$username,$genere,$luogo,$descrizione,$data);
+    mysqli_stmt_bind_param($stmt,"ssssss",$username,$genere,$luogo,$descrizione,$data,$time);
 
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
 }
+
+function deleteAnnuncio($conn,$idannuncio){
+    $sql = "DELETE FROM annunci where (id='$idannuncio')";
+    $sql2 = "DELETE FROM likes where (idannuncio='$idannuncio')";
+    
+    if ($conn->query($sql)!= TRUE || $conn->query($sql2)!= TRUE){
+        exit();
+    }
+}
+
+
+//LIKE MANAGER
 
 function checkLike($conn,$idannuncio,$liker){
      //IS IT LIKED FROM YOU ?
@@ -264,3 +276,4 @@ function deleteLike($conn,$idannuncio,$liker){
         exit();
     }
 }
+

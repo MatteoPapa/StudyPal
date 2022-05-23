@@ -1,0 +1,21 @@
+/*PROFILE*/ 
+
+@media screen and (min-width: 768px) {
+    .rounded{
+      padding-top: 8em;
+    }
+  }
+  
+  .facoltadiv{
+    display: none;
+  }
+  
+  .indirizzodiv{
+    display: none;
+  }
+  
+  @media(max-width: 768px){
+    .rounded{
+      padding-top: 3em;
+    }
+}

@@ -8,7 +8,7 @@
 
     //CONTROLLA SE IL PROFILO DI UNA PERSONA LOGGATA E' CONFIGURATO
     if (isset($_SESSION["username"])){
-        include_once("../profileutility/profile-data.php");
+        include_once("../utility/profileutility/profile-data.php");
             if ($genere==""){
                 header("location: profile.php?mode=edit");
                 exit();
@@ -26,7 +26,7 @@
      $buffer=str_replace("%TITLE%","StudyPal - Compagni",$buffer);
      echo $buffer;
 
-    include_once("../profileutility/profile-data.php");
+    include_once("../utility/profileutility/profile-data.php");
 ?>
     
 
@@ -177,7 +177,7 @@
                                                             $searchNome=$row2["nome"];
                                                             $searchCognome=$row2["cognome"];
                                                         if ($searchGenere!="" && $_SESSION["username"]!=$searchUsername){
-                                                            include("../compagniutility/accountline.php");
+                                                            include("../utility/compagniutility/accountline.php");
                                                         }
                                                     }
                                                 ?>

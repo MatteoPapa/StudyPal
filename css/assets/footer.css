@@ -1,0 +1,93 @@
+/*FRAMMENTO DI BOOTSTRAP CSS PER FOOTER*/
+
+.ion{
+    color: white;
+}
+
+footer {
+  padding-bottom: 0.5em; 
+  padding-top: 1.5em; 
+  margin-top:auto;
+  margin-bottom: 0;
+}
+  
+  .footer-09 {
+    background: linear-gradient(to right, black,#4e0612);
+    margin-bottom: 0;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a1a5e', endColorstr='#5126a7', GradientType=1 ); }
+    .footer-09 .border-top {
+      border-color: rgba(255, 255, 255, 0.1) !important; }
+    .footer-09 a {
+      color: #e5ff00; }
+      .footer-09 a:hover {
+        color: rgba(255, 255, 255, 0.9); }
+    .footer-09 p {
+      color: rgba(255, 255, 255, 0.3); }
+    .footer-09 .footer-heading {
+      color: #fff;
+      text-decoration: underline;
+      font-size: 22px;
+      margin-bottom: 30px; }
+      .footer-09 .footer-heading .icon {
+        width: 40px;
+        margin-right: 10px;
+        border-radius: 50%;
+        height: 40px;
+        display: block;
+        color: #fe59d7;
+        border: 1px solid #fe59d7; }
+    .footer-09 ul.list-unstyled li a {
+      color: rgba(255, 255, 255, 0.5); }
+    .footer-09 .block-21 .heading a {
+      color: rgba(255, 255, 255, 0.5); }
+    .footer-09 .block-21 .meta div a {
+      color: rgba(255, 255, 255, 0.3); }
+    .footer-09 .block-23 ul li {
+      color: rgba(255, 255, 255, 0.5); }
+    .footer-09 .subscribe-form .form-group {
+      position: relative;
+      margin-bottom: 0;
+      border-radius: 0; }
+      .footer-09 .subscribe-form .form-group input {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border: 2px solid #fe8ce3 !important;
+        outline: none !important;
+        color: rgba(255, 255, 255, 0.3) !important;
+        font-size: 16px;
+        border-radius: 0; }
+        .footer-09 .subscribe-form .form-group input::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: rgba(255, 255, 255, 0.3) !important; }
+        .footer-09 .subscribe-form .form-group input::-moz-placeholder {
+          /* Firefox 19+ */
+          color: rgba(255, 255, 255, 0.3) !important; }
+        .footer-09 .subscribe-form .form-group input:-ms-input-placeholder {
+          /* IE 10+ */
+          color: rgba(255, 255, 255, 0.3) !important; }
+        .footer-09 .subscribe-form .form-group input:-moz-placeholder {
+          /* Firefox 18- */
+          color: rgba(255, 255, 255, 0.3) !important; }
+        .footer-09 .subscribe-form .form-group input:focus {
+          outline: none !important;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
+      .footer-09 .subscribe-form .form-group .submit {
+        color: #fff !important;
+        display: block;
+        width: 52px;
+        height: 52px;
+        font-size: 16px;
+        background: #fe8ce3 !important;
+        border: none;
+        border-radius: 0; }
+        .footer-09 .subscribe-form .form-group .submit:hover, .footer-09 .subscribe-form .form-group .submit:focus {
+          text-decoration: none !important;
+          outline: none !important; 
+        }
+  
+.footerlist{
+  list-style-type: none;
+  justify-content: left;
+  padding-left: 1px;
+  color: yellow;
+}

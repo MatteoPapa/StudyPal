@@ -1,0 +1,60 @@
+/*GENERAL CSS*/
+
+*{
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  body{
+    min-height: 100vh;
+    margin: 0;
+  
+    /*Nascondo la scrollbar*/
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  
+    /*UTILIZZO FLEXBOX*/
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /*CLASSE CHE BLOCCA LO SCORRIMENTO DEL BODY QUANDO AGGIUNTA*/
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  
+  /*BUTTONS*/
+  
+  .btn{
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  button{
+    box-shadow: 1px 1px 5px black !important;
+    transform: scale(1);
+    transition: scale 1s ease-in !important;
+  }
+  
+  button:hover{
+    transform: scale(1.05);
+  }
+  
+  .btn-danger{
+    border:0px;
+    background: linear-gradient(to right,black, #4e0612,black);
+    background-size: 200%;
+  }
+  
+  .btn-danger:hover{
+    opacity: .9;
+  }

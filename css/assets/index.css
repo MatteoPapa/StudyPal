@@ -1,0 +1,89 @@
+.jumbotron{
+    background-image: url("../../media/sfondolibri.jpg");
+    background-size: cover;
+    background-color: #cccccc;
+    background-attachment: fixed;
+}
+
+
+.fw-light{
+  color:rgb(255, 255, 255);
+  font-size: 350%;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+#logo{
+  width: 70%;
+  height: 70%;
+}
+
+.lead{
+  color:white;
+  
+}
+
+.jumbotext{
+    padding: 10px;
+}
+
+.blur {
+    height: 100%;
+    backdrop-filter: blur(3px); /* blur effect to the backdrop */
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.spacer{
+  height: 55px;
+  width: 100%;;
+}
+
+.whiteback{
+    background-color: rgba(7, 48, 58, 0.4);
+}
+
+.templateimg{
+    opacity: 100%;
+    min-height: 50px;
+}
+
+.album{
+    background-image: url("../../media/desk.jpg");
+    background-size: cover;
+    background-position: 0px 800px;
+}
+
+.rowalbum{
+  max-width: 1000px;
+  display: flex;
+  align-items: stretch;
+}
+
+.blockimg{
+  cursor:pointer;
+  min-height: 100%;
+  color:black;
+  display: flex;
+  transform: scale(1);
+  transition: all 0.05s ease-in;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.blockimg:hover{
+  transform: scale(1.05);
+}
+
+.card-body{
+  flex: 1 1 auto;
+}
+
+.indexcard-body{
+  background: linear-gradient(to right, #4e0612,black);
+  color:white;
+}
+
+.mailtext{
+    padding-left: 3px;
+}

@@ -12,8 +12,6 @@ window.addEventListener("scroll", (event) => {
 
 //SIDEBAR
 
-
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     $('body').addClass('stop-scrolling');
@@ -196,7 +194,7 @@ function maschioFemmina(){
 
 //BIOGRAFIA APPEARS
 function biografiaAppears(biografia){
-    console.log(biografia);
+    if (biografia=="") biografia="Nessuna Biografia";
     document.getElementById("biografiainpopup").innerHTML = biografia;
     $('.popupbio-container').css('display','flex');
     $('.popupbio-container').css('opacity','1');
@@ -218,7 +216,7 @@ function biografiaDisappears(){
 //PROFILE AJAX (&JQuery)
 
 function editProfile(username){
-        $("#profilecontainer").load("profileutility/load-profile.php",{
+        $("#profilecontainer").load("utility/profileutility/load-profile.php",{
             profileUsername: username
         });
         
@@ -248,12 +246,11 @@ function compilaMessage(){
 /*LIKE ANNUNCI (UTILIZZA AJAX PER CHIAMATA ASINCRONA A PHP)*/
 
 function ballonlike(idannuncio,liker){
-    
 
     idannuncio=parseInt(idannuncio);
     jQuery.ajax({
         type:"POST",
-        url: 'annunciutility/putlike.php',
+        url: 'utility/annunciutility/like.php',
         dataType:'json',
         data: {likerpost:liker,idannunciopost:idannuncio},
         success: function(data){
@@ -265,6 +262,25 @@ function ballonlike(idannuncio,liker){
         updateDiv();
     },100);
     
+}
+
+function deleteAnnuncio(idannuncio){
+    if (confirm("Vuoi eliminare quest'annuncio ?")){
+        idannuncio=parseInt(idannuncio);
+        jQuery.ajax({
+            type:"POST",
+            url: 'utility/annunciutility/delete.php',
+            dataType:'json',
+            data: {idannunciopost:idannuncio},
+            success: function(data){
+                
+            }
+        });
+    }
+
+    setTimeout(function(){
+        updateDiv();
+    },100);
 }
 
 function updateDiv()

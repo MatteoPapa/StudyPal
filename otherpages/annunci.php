@@ -8,7 +8,7 @@
 
     //CONTROLLA SE IL PROFILO DI UNA PERSONA LOGGATA E' CONFIGURATO
     if (isset($_SESSION["username"])){
-        include_once("../profileutility/profile-data.php");
+        include_once("../utility/profileutility/profile-data.php");
             if ($genere==""){
                 header("location: profile.php?mode=edit");
                 exit();
@@ -26,7 +26,7 @@
      $buffer=str_replace("%TITLE%","StudyPal - Annunci",$buffer);
      echo $buffer;
 
-    include_once("../profileutility/profile-data.php");
+    include_once("../utility/profileutility/profile-data.php");
 ?>
     
 
@@ -74,7 +74,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                 <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                             </svg>
-                            <a href="annunciutility/write.php"><span class="mx-1" style="color:white">Scrivi un annuncio</span></a>
+                            <a href="utility/annunciutility/write.php"><span class="mx-1" style="color:white">Scrivi un annuncio</span></a>
                         </button>
                     </div>
                     <!-- begin profile-content -->
@@ -99,6 +99,7 @@
                                         $searchDescrizione= $row2["descrizione"];
                                         $searchId=$row2["id"];
                                         $searchData=$row2["data"];
+                                        $searchTime=$row2["orario"];
                                         $currentDate=date('Y-m-d');
                                         if ($searchData<$currentDate){
                                             echo "";
@@ -106,7 +107,7 @@
                                         }
                                         
                                         if ($searchLuogo!=""){
-                                            include("../annunciutility/annuncioline.php");
+                                            include("../utility/annunciutility/annuncioline.php");
                                         }
                                 }
                             ?>

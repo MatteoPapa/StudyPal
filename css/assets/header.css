@@ -1,0 +1,86 @@
+
+header {
+    position: fixed;
+    top: 8px; 
+    left: 0;
+    height: 55px;
+    margin-bottom: 9px;
+    z-index: 1;
+    width: 100%;
+    font-weight: 1000px;
+}
+
+.headerbackground {
+  background: linear-gradient(to right, #4e0612,black);
+  position: fixed;
+  top: 0; 
+  left: 0;
+  height: 70px;
+  margin-bottom: 10px;
+  z-index: -1;
+  width: 100%;
+  font-weight: 1000;
+  opacity:0;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.headvisible{
+ opacity: 1;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+@media(max-width: 991px){
+    #navigatorbar{
+        display: none;
+    }
+    #menuicon{
+        display: default;
+    }
+    .loginbuttons{
+        padding-right: 1px;
+    }
+}
+
+@media(min-width: 992px){
+    #navigatorbar{
+        display: default;
+    }
+    #menuicon{
+        display: none;
+    }
+    .loginbuttons{
+        padding-right: 5vh;
+    }
+}
+
+
+.nav-link{
+    color: black;
+    background-color:  rgba(255, 255, 255, 0.336);
+    font-weight: 1000;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+    background: linear-gradient( black,#4e0612);
+    color: white;
+}
+
+.bi-list{
+  cursor: pointer;
+    color:black;
+    transform: scale(1.0);
+    transition: transform .15s ease-in-out;
+}
+
+.bi-list:hover{
+    transform: scale(1.1);
+}
