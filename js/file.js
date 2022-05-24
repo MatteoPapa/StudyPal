@@ -16,7 +16,7 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     $('body').addClass('stop-scrolling');
     $('body').bind('touchmove', function(e){e.preventDefault()});
-    document.getElementById('#main').addEventListener('click', closeNav);
+    document.getElementsByTagName("main")[0].addEventListener('click', closeNav);
   }
 
 function closeNav() {
@@ -24,6 +24,8 @@ function closeNav() {
     $('body').removeClass('stop-scrolling');
     $('body').unbind('touchmove');
 }
+
+
 
 //PROFILE CHECKBOX LICEALE-UNIVERSITARIO
 
@@ -182,13 +184,19 @@ function updateUni(){
 //PROFILE CHECKBOX MASCHIO-FEMMINA
 
 function maschioFemmina(){
-    if(document.getElementById('maschio').checked) {
-        document.getElementById('avatarimage').src="media/avatar-male.jpg";
-    }else if(document.getElementById('femmina').checked) {
-        document.getElementById('avatarimage').src="media/avatar-female.jpg";
-    }
-    else{
-        document.getElementById('avatarimage').src="media/avatar-male.jpg";
+    let source=document.getElementById('avatarimage').src;
+    
+    //CONTROLLA SE NON E' IMPOSTATA UN'IMMAGINE DEL PROFILO
+    if (source=="http://localhost/studypal/media/avatar-male.jpg" || source=="http://localhost/studypal/media/avatar-female.jpg"){
+        if(document.getElementById('maschio').checked){ 
+            document.getElementById('avatarimage').src="media/avatar-male.jpg";
+        }
+        else if(document.getElementById('femmina').checked) {
+            document.getElementById('avatarimage').src="media/avatar-female.jpg";
+        }
+        else{
+            document.getElementById('avatarimage').src="media/avatar-male.jpg";
+        }
     }
 }
 
@@ -210,7 +218,19 @@ function biografiaDisappears(){
     $('body').unbind('touchmove');
 }
 
+//PROFILE PHOTO
 
+function avatartextAppears(){
+    $('.avatartext').css("display","inline-block");
+}
+
+function avatartextDisappears(){
+    $('.avatartext').css("display","none");
+}
+
+function uploadPhoto(){ 
+    $('#imgupload').trigger('click'); 
+}
 
 
 //PROFILE AJAX (&JQuery)
@@ -236,7 +256,7 @@ function findGetParameter(parameterName) {
 }
 
 function compilaMessage(){
-    if (findGetParameter("mode")=="edit"){
+    if (findGetParameter("mode")=="new"){
         document.getElementById('compilaPrima').style.display="block";
     }
 }

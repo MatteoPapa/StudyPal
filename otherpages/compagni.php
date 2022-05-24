@@ -10,7 +10,7 @@
     if (isset($_SESSION["username"])){
         include_once("../utility/profileutility/profile-data.php");
             if ($genere==""){
-                header("location: profile.php?mode=edit");
+                header("location: profile.php?mode=new");
                 exit();
             }
       }
@@ -176,6 +176,7 @@
                                                             $searchBiografia=$row2["biografia"];
                                                             $searchNome=$row2["nome"];
                                                             $searchCognome=$row2["cognome"];
+                                                            $searchPicture=$row2["picture"];
                                                         if ($searchGenere!="" && $_SESSION["username"]!=$searchUsername){
                                                             include("../utility/compagniutility/accountline.php");
                                                         }

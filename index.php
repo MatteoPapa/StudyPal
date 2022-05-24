@@ -50,7 +50,7 @@
                 </svg>
 
                 <div class="indexcard-body card-body d-flex row">
-                  <h4><b>Compagni</b></h4>
+                  <h4 style="text-decoration: underline"><b>Compagni</b></h4>
                   <p class="card-text">Cerca il tuo compagno di studi fra gli studenti iscritti al nostro sito web, selezionando la materia che desideri.</p>
                 </div>
               </div>
@@ -64,7 +64,7 @@
                 </svg>
 
                 <div class="indexcard-body card-body d-flex row">
-                  <h4><b>Annunci</b></h4>
+                  <h4 style="text-decoration: underline"><b>Annunci</b></h4>
                   <p class="card-text">Controlla la sezione degli annunci, scoprendo se puoi raggiungere qualcuno per studiare insieme.</p>
                 </div>
               </div>

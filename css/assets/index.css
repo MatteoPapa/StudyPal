@@ -80,8 +80,9 @@
 }
 
 .indexcard-body{
-  background: linear-gradient(to right, #4e0612,black);
+  background: linear-gradient(to right, black,#4e0612,black);
   color:white;
+  text-align: center;
 }
 
 .mailtext{

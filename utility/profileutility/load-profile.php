@@ -9,12 +9,37 @@
     require_once("../../utility/profileutility/profile-data.php");
 ?>
 
-    <div class="container rounded bg-white mt-1 mb-5">
+    <div class="container rounded bg-white mt-0 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-2 mb-2" id="avatarimage" width="150px" height="150px"/>
-                    <span class="font-weight-bold"><b><?php echo $username?></b></span>
+
+                <!--PROFILE PICTURE LOADER-->
+
+                    <form method="POST" action="utility/profileutility/uploadfile.php"  enctype="multipart/form-data">
+                        <input type="file" name="uploadfile" id="imgupload" style="display:none" accept="image/png, image/jpeg" onchange="document.getElementById('upload').click();"/>
+                        <input type="submit" style="display: none;" name="upload" id="upload">
+                    </form>
+
+
+                    <div class="avatarimagediv" onmouseover="avatartextAppears()" onmouseout="avatartextDisappears()"  onclick="uploadPhoto();">
+                        <img class="rounded-circle avatareditable" id="avatarimage" style="border:1px dashed black" width="150px" height="150px" <?php
+                            if ($picture==''){
+                                echo "src='media/avatar-male.jpg'";
+                            }
+                            else{
+                                echo ("src='media/profilepics/$picture'");
+                            }
+                        ?>"
+                        />
+                        <span class="avatartext">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-upload" viewBox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <span class="font-weight-bold mt-2"><b><?php echo $username?></b></span>
                     <span style="font-weight: 300px"><?php echo $email?></span>
                     <span> </span>
                 </div>
@@ -131,7 +156,7 @@
                                 </div>  
                             </div>
                             <div class="col-md-12 py-2">
-                                <b>Biografia</b><br>
+                                <b>Biografia</b> (opzionale)<br>
                                 <textarea class="bioedit form-control" name="biografia" rows="3" cols="60" form="edit-form"><?php echo $biografia?></textarea>
                             </div>
                         </div>

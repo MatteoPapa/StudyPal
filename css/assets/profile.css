@@ -19,3 +19,34 @@
       padding-top: 3em;
     }
 }
+
+.avatareditable{
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+}
+
+.avatareditable:hover{
+  filter:brightness(50%);
+}
+
+.avatarimagediv{
+  position: relative;
+  z-index:2;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#avatarimage{
+  object-fit: cover;
+
+}
+
+.avatartext{
+  position: absolute;
+  top:42%;
+  left:40%;
+  display: none;
+  pointer-events: none;
+}

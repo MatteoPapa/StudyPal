@@ -16,6 +16,7 @@
         $biografia=$row["biografia"];
         $nome=$row["nome"];
         $cognome=$row["cognome"];
+        $picture=$row["picture"];
     }
     else{
         header("location: ../otherpages/compagni.php");

@@ -92,8 +92,10 @@
                                 $result=mysqli_query($conn,$sql);
                                 
                                 while($row2=mysqli_fetch_assoc($result)){
+
                                         
                                         $searchUsername=$row2["username"];
+                                        
                                         $searchGenere= $row2["genere"];
                                         $searchLuogo= $row2["luogo"];
                                         $searchDescrizione= $row2["descrizione"];
@@ -101,6 +103,11 @@
                                         $searchData=$row2["data"];
                                         $searchTime=$row2["orario"];
                                         $currentDate=date('Y-m-d');
+                                        
+                                        $sql2="SELECT * FROM profile where username='$searchUsername'";
+                                        $result2=mysqli_query($conn,$sql2);
+                                        $row3=mysqli_fetch_assoc($result2);
+                                        $searchPicture=$row3["picture"];
                                         if ($searchData<$currentDate){
                                             echo "";
                                             continue;

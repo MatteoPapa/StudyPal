@@ -13,8 +13,8 @@
     //CONTROLLA SE IL PROFILO DI UNA PERSONA LOGGATA E' CONFIGURATO
     if (isset($_SESSION["username"])){
         include_once("../utility/profileutility/profile-data.php");
-            if ($genere=="" && $_GET["mode"]!=="edit"){
-                header("location: profile.php?mode=edit");
+            if ($genere=="" && $_GET["mode"]!=="new"){
+                header("location: profile.php?mode=new");
                 exit();
             }
       }
@@ -45,22 +45,22 @@
                 <div id="avatardiv" class="row d-flex justify-content-center">
                     <div class="col-md-3 border-right">
                         <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-
-                        <img class="rounded-circle mt-2 mb-2 " id="avatarimage" width="150px" height="150px" 
-                            <?php
-                                if ($genere !== "femmina"){
+                            <img class="rounded-circle" id="avatarimage" width="150px" height="150px"<?php
+                                if ($picture!=''){
+                                    echo ('src="media/profilepics/'.$picture .'"');
+                                }
+                                else if ($genere !== "femmina"){
                                     echo 'src="media/avatar-male.jpg"';
                                 }
                                 else{
                                     echo 'src="media/avatar-female.jpg"';
                                 }
-                            ?>
-                        />
-                        <span class="font-weight-bold"><b><?php echo $_SESSION["username"] ?></b></span>
-                        <span style="font-weight: 300px"><?php echo $_SESSION["email"] ?></span>
-                        <span> </span>
-                    </div>
-                </div>
+                            ?>/>
+                            <span class="font-weight-bold mt-2"><b><?php echo $_SESSION["username"] ?></b></span>
+                            <span style="font-weight: 300px"><?php echo $_SESSION["email"] ?></span>
+                            <span> </span>
+                        </div>
+                     </div>
                 <div class="col-md-5 border-right">
                     <div class="px-3 py-3">
                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -171,14 +171,13 @@
         </div>
     </main >
 
-    <!-- Funzione JS che osserva se il parametro GET mode è uguale a edit-->
+    <!-- Funzione JS che osserva se il parametro GET mode è uguale a edit o a create-->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let user=<?php echo(json_encode($usernameStringed)); ?>;
-            console.log(user);
             
-            if (findGetParameter("mode")=="edit"){
+            if (findGetParameter("mode")=="edit" || findGetParameter("mode")=="new"){
                 editProfile(user);
             }
         }, false);
