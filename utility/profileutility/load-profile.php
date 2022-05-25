@@ -30,7 +30,7 @@
                             else{
                                 echo ("src='media/profilepics/$picture'");
                             }
-                        ?>"
+                        ?>
                         />
                         <span class="avatartext">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-upload" viewBox="0 0 16 16">
