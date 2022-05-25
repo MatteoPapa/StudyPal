@@ -108,6 +108,7 @@
                                         $result2=mysqli_query($conn,$sql2);
                                         $row3=mysqli_fetch_assoc($result2);
                                         $searchPicture=$row3["picture"];
+                                        
                                         if ($searchData<$currentDate){
                                             echo "";
                                             continue;

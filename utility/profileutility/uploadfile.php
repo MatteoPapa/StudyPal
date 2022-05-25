@@ -10,7 +10,7 @@
     //NOME CUSTOM PER IL FILE
     $extension = substr($filename, strpos($filename, ".") + 1);    
     $finalname = $username ."pic." .$extension;
-    $folder = "../../media/profilepics/".$username ."pic." . $extension;
+    $folder = "../../media/profilepics/".$finalname;
     
     //FUNZIONE CHE VERIFICA SE E' UN'IMMAGINE
     $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -22,7 +22,7 @@
 
     require_once("../../login-signup/dbh.inc.php");
 
-    //CONTROLLIAMO SE GIA' ESISTE UNA PICTURE CON QUELNOME
+    //CONTROLLIAMO SE GIA' ESISTE UNA PICTURE CON QUEL NOME
     $sql = "SELECT picture from profile WHERE username='$username'";
 
     $result=mysqli_query($conn,$sql);

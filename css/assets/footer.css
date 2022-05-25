@@ -12,7 +12,7 @@ footer {
 }
   
   .footer-09 {
-    background: linear-gradient(to right, black,#4e0612);
+    background: linear-gradient(to right, black 10%,#b1102a);
     margin-bottom: 0;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a1a5e', endColorstr='#5126a7', GradientType=1 ); }
     .footer-09 .border-top {

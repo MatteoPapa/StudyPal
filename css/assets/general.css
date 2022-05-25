@@ -46,12 +46,12 @@
   }
   
   button:hover{
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
   }
   
   .btn-danger{
     border:0px;
-    background: linear-gradient(to right,black, #4e0612,black);
+    background: linear-gradient(to right,black, #b1102a,black);
     background-size: 200%;
   }
   

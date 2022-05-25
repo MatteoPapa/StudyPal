@@ -28,7 +28,9 @@
                               <h1 class="fw-light"><b>Smetti di studiare da solo!</b></h1>
                               <p class="lead">Grazie a questo sito web potrai trovare il compagno di studi che fa per te</p>
                               <p>
-                                  <a href="otherpages/compagni.php" class="btn btn-danger my-2">Inizia adesso!</a>
+                                  <a href="otherpages/compagni.php" >
+                                    <button class="btn btn-danger my-2">Inizia adesso!</button>
+                                  </a>
                               </p>
                             </div>
                         </div>
